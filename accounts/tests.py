@@ -39,7 +39,7 @@ class CustomUserTests(TestCase):
 
 class CustomUserFormTests(TestCase):
 
-    def __init__(self):
+    def setup(self):
         self.model = get_user_model()
         self.fields = ('email', 'username',)
 
