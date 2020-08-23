@@ -39,18 +39,18 @@ class CustomUserTests(TestCase):
 
 class CustomUserFormTests(TestCase):
 
-    def setup(self):
+    def setUp(self):
         self.model = get_user_model()
         self.fields = ('email', 'username',)
 
     def test_create_user(self):
         form = CustomUserCreationForm
 
-        self.assertEqual(form.model, self.model)
-        self.assertEqual(form.fields, self.fields)
+        self.assertEqual(form.Meta.model, self.model)
+        self.assertEqual(form.Meta.fields, self.fields)
 
     def test_change_user(self):
         form = CustomUserChangeForm
 
-        self.assertEqual(form.model, self.model)
-        self.assertEqual(form.fields, self.fields)
+        self.assertEqual(form.Meta.model, self.model)
+        self.assertEqual(form.Meta.fields, self.fields)
