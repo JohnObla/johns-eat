@@ -13,7 +13,7 @@ services:
         environment:
             - "DJANGO_SECRET_KEY=&n0f@etjf-vf8_pn4ws48*8%rstn%ebu(#l9nd^*3fjy7l234)"
             - "DJANGO_DEBUG=True"
-            - "SECURE_SSL_REDIRECT=False"
+            - "DJANGO_SECURE_SSL_REDIRECT=False"
             - "DJANGO_SECURE_HSTS_SECONDS=0"
             - "DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS=False"
             - "DJANGO_SECURE_HSTS_PRELOAD=False"
