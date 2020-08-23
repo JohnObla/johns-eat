@@ -1,0 +1,4 @@
+# Dependencies are generated via requirements.txt
+# Create with the code `pipenv lock -r > requirements.txt`
+Pipfile
+Pipfile.lock

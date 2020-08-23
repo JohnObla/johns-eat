@@ -1,0 +1,16 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+autopep8 = "*"
+flake8 = "*"
+
+[packages]
+django = "~=3.1"
+psycopg2-binary = "~=2.8.5"
+environs = {extras = ["django"], version = "==8.0.0"}
+
+[requires]
+python_version = "3.8"

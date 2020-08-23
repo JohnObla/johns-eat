@@ -1,0 +1,12 @@
+{
+    "python.pythonPath": "/home/john/.local/share/virtualenvs/johns-eat-lmUcKknG/bin/python",
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.formatting.provider": "autopep8",
+    "editor.formatOnSave": true,
+    "emmet.includeLanguages": {
+        "django-html": "html"
+    },
+    "python.autoComplete.addBrackets": true
+}
