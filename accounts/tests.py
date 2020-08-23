@@ -1,6 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 
+from .admin import CustomUserAdmin
 from .forms import CustomUserCreationForm, CustomUserChangeForm
 
 
@@ -54,3 +55,19 @@ class CustomUserFormTests(TestCase):
 
         self.assertEqual(form.Meta.model, self.model)
         self.assertEqual(form.Meta.fields, self.fields)
+
+
+class CustomUserAdminTests(TestCase):
+
+    def test_custom_user_admin(self):
+        add_form = CustomUserCreationForm
+        form = CustomUserChangeForm
+        model = get_user_model()
+        list_display = ['email', 'username', ]
+
+        user_admin = CustomUserAdmin
+
+        self.assertEqual(user_admin.add_form, add_form)
+        self.assertEqual(user_admin.form, form)
+        self.assertEqual(user_admin.model, model)
+        self.assertEqual(user_admin.list_display, list_display)
