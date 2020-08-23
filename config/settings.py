@@ -53,7 +53,7 @@ INSTALLED_APPS = [
 
     # Local
     'accounts',
-    'shop',
+    'restaurants',
 ]
 
 MIDDLEWARE = [
