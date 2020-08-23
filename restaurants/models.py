@@ -36,6 +36,9 @@ class Address(models.Model):
         on_delete=models.CASCADE,
     )
 
+    class Meta:
+        verbose_name_plural = "addresses"
+
     address1 = models.CharField(
         "Address line 1",
         max_length=1024,
@@ -70,6 +73,9 @@ class Food(models.Model):
         on_delete=models.CASCADE,
     )
 
+    class Meta:
+        verbose_name_plural = "food"
+
     name = models.CharField(
         "Name",
         max_length=200,
@@ -92,6 +98,9 @@ class Allergy(models.Model):
         on_delete=models.CASCADE,
     )
 
+    class Meta:
+        verbose_name_plural = "allergies"
+
     name = models.CharField(
         "Name",
         max_length=200,
@@ -104,6 +113,9 @@ class Allergy(models.Model):
 
 class Category(models.Model):
     food = models.ManyToManyField(Food)
+
+    class Meta:
+        verbose_name_plural = "categories"
 
     name = models.CharField(
         "Name",
