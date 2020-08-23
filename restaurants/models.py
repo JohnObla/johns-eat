@@ -61,7 +61,7 @@ class Address(models.Model):
     )
 
     def __str__(self):
-        return 'f{self.address1} f{self.zip_code}'
+        return f"{self.address1}, {self.zip_code}"
 
 
 class Food(models.Model):
