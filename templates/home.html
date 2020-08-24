@@ -3,6 +3,22 @@
 
 {% block content %}
 
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4 text-center">Tuck into a takeaway today</h1>
+        <p class="lead text-center">Find restaurants delivering right now, near you</p>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control text-center" placeholder="Enter your postcode" aria-label="Postcode"
+                aria-describedby="button-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-danger" type="button" id="button-addon2">Search</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <ul>
     <p></p>
     {% for restaurant in restaurants_list %}
