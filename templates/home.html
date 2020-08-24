@@ -1,6 +1,11 @@
 {% extends '_base.html' %}
+{% load static %}
 
 {% block content %}
+
+<h1>John's Eat</h1>
+
+<img class="food-logo" alt="Picture of John's Eat's logo" src="{% static 'images/food_logo.png' %}">
 
 <ul>
     {% for restaurant in restaurants_list %}
