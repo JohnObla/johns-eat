@@ -1,8 +1,17 @@
 h1 {
-    color:red;
+    color:green;
 }
 
 .food-logo {
-    height: 200px;
+    height: 500px;
     width: auto;
 }
+
+body {
+    padding-top: 60px;
+  }
+  @media (max-width: 979px) {
+    body {
+      padding-top: 0px;
+    }
+  }

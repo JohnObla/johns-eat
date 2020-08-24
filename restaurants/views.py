@@ -20,4 +20,4 @@ class FoodListView(ListView):
 
 
 class IndexView(TemplateView):
-    template_name = 'index.html'
+    template_name = 'index copy.html'
