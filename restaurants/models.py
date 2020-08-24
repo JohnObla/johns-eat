@@ -24,7 +24,6 @@ class Cuisine(models.Model):
         max_length=200,
         help_text='Enter the cuisine name',
     )
-    description = models.TextField
 
     def __str__(self):
         return self.name
@@ -81,7 +80,7 @@ class Food(models.Model):
         max_length=200,
         help_text='Enter the food name',
     )
-    description = models.TextField("Description")
+    description = models.TextField(blank=True)
     price = models.DecimalField(
         "Price",
         max_digits=5,
