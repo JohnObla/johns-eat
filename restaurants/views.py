@@ -1,4 +1,4 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from .models import Food, Restaurant
 
 
@@ -17,3 +17,7 @@ class FoodListView(ListView):
     model = Food
     context_object_name = 'food_list'
     template_name = 'food_list.html'
+
+
+class IndexView(TemplateView):
+    template_name = 'index.html'
