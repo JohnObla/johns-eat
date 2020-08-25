@@ -10,7 +10,44 @@ class Restaurant(models.Model):
         max_length=200,
         help_text='Enter the restaurant name',
     )
-    description = models.TextField
+    description = models.TextField(default='')
+
+    address1 = models.CharField(
+        "Address line 1",
+        max_length=1024,
+        default='',
+    )
+    address2 = models.CharField(
+        "Address line 2",
+        max_length=1024,
+        default='',
+        blank=True,
+    )
+
+    address3 = models.CharField(
+        "Address line 3",
+        max_length=1024,
+        default='',
+        blank=True,
+    )
+
+    zip_code = models.CharField(
+        "ZIP / Postal code",
+        max_length=12,
+        default='',
+    )
+
+    city = models.CharField(
+        "City",
+        max_length=1024,
+        default='',
+    )
+
+    country = models.CharField(
+        "Country",
+        max_length=1024,
+        default='',
+    )
 
     def __str__(self):
         return self.name
@@ -27,43 +64,6 @@ class Cuisine(models.Model):
 
     def __str__(self):
         return self.name
-
-
-class Address(models.Model):
-    restaurant = models.ForeignKey(
-        Restaurant,
-        on_delete=models.CASCADE,
-    )
-
-    class Meta:
-        verbose_name_plural = "addresses"
-
-    address1 = models.CharField(
-        "Address line 1",
-        max_length=1024,
-    )
-    address2 = models.CharField(
-        "Address line 2",
-        max_length=1024,
-    )
-
-    zip_code = models.CharField(
-        "ZIP / Postal code",
-        max_length=12,
-    )
-
-    city = models.CharField(
-        "City",
-        max_length=1024,
-    )
-
-    country = models.CharField(
-        "Country",
-        max_length=1024,
-    )
-
-    def __str__(self):
-        return f"{self.address1}, {self.zip_code}"
 
 
 class Food(models.Model):

@@ -1,7 +1,6 @@
 from django.contrib import admin
-from .models import Address, Allergy, Category, Cuisine, Food, Restaurant
+from .models import Allergy, Category, Cuisine, Food, Restaurant
 
-admin.site.register(Address)
 admin.site.register(Allergy)
 admin.site.register(Category)
 admin.site.register(Cuisine)
