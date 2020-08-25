@@ -7,8 +7,10 @@
 
 <ul>
     {% for food in restaurant.food_set.all %}
+    <p>{{ restaurant.description }}</p>
 
     <li>{{ food }} - £{{ food.price }} </li>
+    {{ food.description }}
 
     {% endfor %}
 </ul>

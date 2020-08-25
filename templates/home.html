@@ -21,8 +21,9 @@
 <h1 class="display-5">Restaurants near you</h1>
 <div class="row">
     {% for restaurant in restaurants_list %}
-    <div class="col-4 d-flex justify-content-center">
-        <a href="{% url 'restaurants:detail' restaurant.id %}">{{ restaurant }}</a>
+    <div class="col-4 ">
+        <a class="d-flex justify-content-center"
+            href="{% url 'restaurants:detail' restaurant.id %}">{{ restaurant }}</a>
     </div>
     {% endfor %}
 </div>
