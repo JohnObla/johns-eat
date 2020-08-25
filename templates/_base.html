@@ -27,12 +27,21 @@
             <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul class="navbar-nav ml-auto">
 
+                    {% if user.is_authenticated %}
+                    <li class="nav-item active nav-link">
+                        <strong>Hi {{ user.username|title }}!</strong>
+                    </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#"><strong>Login</strong></a>
+                        <a class="nav-link" href="{% url 'logout' %}"><strong>Logout</strong></a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'login' %}"><strong>Login</strong></a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="#"><strong>Signup</strong></a>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>

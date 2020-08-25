@@ -8,5 +8,6 @@
     "emmet.includeLanguages": {
         "django-html": "html"
     },
-    "python.autoComplete.addBrackets": false
+    "python.autoComplete.addBrackets": true,
+    "editor.suggest.snippetsPreventQuickSuggestions": false
 }
