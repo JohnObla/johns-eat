@@ -2,8 +2,21 @@ from django.db import models
 from django.contrib.auth import get_user_model
 
 
+class Cuisine(models.Model):
+    name = models.CharField(
+        "Name",
+        max_length=200,
+        help_text='Enter the cuisine name',
+    )
+
+    def __str__(self):
+        return self.name
+
+
 class Restaurant(models.Model):
     owner = models.ManyToManyField(get_user_model())
+
+    cuisine = models.ManyToManyField(Cuisine, default='')
 
     name = models.CharField(
         "Name",
@@ -53,13 +66,20 @@ class Restaurant(models.Model):
         return self.name
 
 
-class Cuisine(models.Model):
-    restaurant = models.ManyToManyField(Restaurant)
+class Category(models.Model):
+    class Meta:
+        verbose_name_plural = "categories"
+
+    restaurant = models.ForeignKey(
+        Restaurant,
+        on_delete=models.CASCADE,
+        default=''
+    )
 
     name = models.CharField(
         "Name",
         max_length=200,
-        help_text='Enter the cuisine name',
+        help_text='Enter the category name',
     )
 
     def __str__(self):
@@ -71,6 +91,8 @@ class Food(models.Model):
         Restaurant,
         on_delete=models.CASCADE,
     )
+
+    category = models.ManyToManyField(Category, default='')
 
     class Meta:
         verbose_name_plural = "food"
@@ -104,22 +126,6 @@ class Allergy(models.Model):
         "Name",
         max_length=200,
         help_text='Enter the allergy name',
-    )
-
-    def __str__(self):
-        return self.name
-
-
-class Category(models.Model):
-    food = models.ManyToManyField(Food)
-
-    class Meta:
-        verbose_name_plural = "categories"
-
-    name = models.CharField(
-        "Name",
-        max_length=200,
-        help_text='Enter the category name',
     )
 
     def __str__(self):
