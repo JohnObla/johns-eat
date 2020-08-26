@@ -17,7 +17,7 @@
 <body>
 
     <nav class="navbar navbar-expand-md navbar-dark bg-danger">
-        <a class="navbar-brand" href="{% url 'restaurants:home' %}"><strong>John's Eat</strong></a>
+        <a class="navbar-brand font-weight-bold" href="{% url 'restaurants:home' %}">John's Eat</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -26,17 +26,17 @@
             <ul class="navbar-nav ml-auto">
                 {% if user.is_authenticated %}
                 <li class="nav-item active">
-                    <a class="nav-link"><strong>Hi {{ user.username|title }}!</strong></a>
+                    <a class="nav-link font-weight-bold">Hi {{ user.username|title }}!</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'logout' %}"><strong>Logout</strong></a>
+                    <a class="nav-link font-weight-bold" href="{% url 'logout' %}">Logout</a>
                 </li>
                 {% else %}
                 <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'signup' %}"><strong>Signup</strong></a>
+                    <a class="nav-link font-weight-bold" href="{% url 'signup' %}">Signup</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'login' %}"><strong>Login</strong></a>
+                    <a class="nav-link font-weight-bold" href="{% url 'login' %}">Login</a>
                 </li>
                 {% endif %}
             </ul>
