@@ -1,0 +1,3 @@
+# Admin static files
+staticfiles/admin/* linguist-vendored
+staticfiles/staticfiles.json linguist-vendored
