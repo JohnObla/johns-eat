@@ -10,3 +10,6 @@ Live site: https://johns-eat.herokuapp.com/<br>
 - __Database:__ PostgreSQL 🐘
 - __Container:__ Docker 🐳
 - __Hosting:__ Heroku ⚛️
+
+Note: The `docker-compose.yml` file is the compose file for develop.<br>
+      The production compose file was not checked in to source control.
