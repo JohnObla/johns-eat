@@ -11,8 +11,8 @@
     {% for food in restaurant.food_set.all %}
 
     <li>
-        <p>{{ food }} - £{{ food.price }}<br>
-            {{ food.description }}</p>
+        {{ food }} - £{{ food.price }}<br>
+        <p class="font-italic">{{ food.description }}</p>
     </li>
     {% endfor %}
 </ul>
