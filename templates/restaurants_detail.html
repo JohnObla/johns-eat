@@ -5,13 +5,15 @@
 {% block content %}
 <h1>{{ restaurant.name }}</h1>
 
+<p>{{ restaurant.description }}</p>
+
 <ul>
     {% for food in restaurant.food_set.all %}
-    <p>{{ restaurant.description }}</p>
 
-    <li>{{ food }} - £{{ food.price }} </li>
-    {{ food.description }}
-
+    <li>
+        <p>{{ food }} - £{{ food.price }}<br>
+            {{ food.description }}</p>
+    </li>
     {% endfor %}
 </ul>
 {% endblock content %}
