@@ -9,17 +9,22 @@
         <h2 class="display-4 text-center">Tuck into a takeaway today</h2>
         <p class="lead text-center">Find restaurants delivering right now, near you</p>
 
-        <div class="input-group mb-3 d-flex justify-content-center">
+        <form method="post" class="input-group mb-3 d-flex justify-content-center">
+            {% csrf_token %}
             <input type="text" class="form-control text-center col-md-7" placeholder="Enter your postcode"
                 aria-label="Postcode" aria-describedby="button-addon2">
             <div class="input-group-append">
-                <button class="btn btn-danger" type="button" id="button-addon2">Search</button>
+                <button class="btn btn-danger" type="submit" id="button-addon2">Search</button>
             </div>
-        </div>
     </div>
 </div>
 
-<h1 class="display-5">Restaurants near you</h1>
+<h1 class="display-5">
+    Restaurants near {% block location %}you{% endblock location %}
+</h1>
+
+
+{% block subtitle-content %}
 <div class="row">
     {% for restaurant in restaurants_list %}
     <div class="col-4 ">
@@ -28,6 +33,6 @@
     </div>
     {% endfor %}
 </div>
-
+{% endblock subtitle-content %}
 
 {% endblock content %}
