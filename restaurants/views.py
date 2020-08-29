@@ -1,3 +1,4 @@
+from django.shortcuts import redirect
 from django.views.generic import ListView, DetailView, TemplateView
 from .models import Food, Restaurant
 
@@ -19,9 +20,9 @@ class FoodListView(ListView):
     template_name = 'food_list.html'
 
 
-class IndexView(TemplateView):
-    template_name = 'index copy.html'
-
-
 class SearchView(TemplateView):
     template_name = 'search.html'
+
+    def post(self, request):
+        return redirect('restaurants:search_postcode',
+                        postcode=request.POST['postcode_field'])

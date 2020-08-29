@@ -5,7 +5,6 @@ Work in progress web app, based on a popular online food delivery company's 😉
 Live site: https://johns-eat.herokuapp.com/<br>
 (Initial load may take some time as the site's hosted on Heroku's free tier)
 
-While the postcode search is a placeholder, the rest of the app functionality is working.<br>
 More features coming soon!
 
 - __Language:__ Python 🐍
