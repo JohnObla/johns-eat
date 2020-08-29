@@ -1,3 +1,5 @@
+from django.shortcuts import render
+from django.http import request
 from django.views.generic import ListView, DetailView, TemplateView
 from .models import Food, Restaurant
 
@@ -21,3 +23,7 @@ class FoodListView(ListView):
 
 class IndexView(TemplateView):
     template_name = 'index copy.html'
+
+
+class SearchView(TemplateView):
+    template_name = 'search.html'
